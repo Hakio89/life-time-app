@@ -5,7 +5,8 @@ build/
 dist/
 wheels/
 *.egg-info
+*.env
+*.sqlite3
 
 # Virtual environments
 .venv
-life_time_app/.env
