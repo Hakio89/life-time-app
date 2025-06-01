@@ -19,25 +19,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Take environment variables from .env file
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
-
+env = environ.Env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-env = environ.Env(
-    # set casting, default value
-    DEBUG=(bool, True)
-)
+DEBUG = env.bool('DEBUG', default=True)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
 
 
-
-
-
-ALLOWED_HOSTS = ['http://127.0.0.1:8000/', 'http://localhost:8000/']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
