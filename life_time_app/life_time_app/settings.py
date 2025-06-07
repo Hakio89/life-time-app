@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'working_time',  # Your custom app for working time tracking
+    "users",  # Your custom app for user management
 ]
 
 MIDDLEWARE = [
