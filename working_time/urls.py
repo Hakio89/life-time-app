@@ -3,6 +3,7 @@ from working_time import views
 
 urlpatterns = [
     path('', views.LifeTimeView.as_view(), name='life_time_view'),
+    path('about-us/', views.AboutUsView.as_view(), name='about_us_view'),
     # Define your URL patterns here
     # Example:
     # path('some-path/', some_view, name='some_view_name'),
