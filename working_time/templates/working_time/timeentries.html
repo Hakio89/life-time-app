@@ -1,0 +1,47 @@
+{% extends "working_time/dashboard.html" %}
+
+    {% block dashboard%}
+    <main class="col-12 col-md-9 col-lg-10 px-4">
+      <div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2 class="h4">Wpisy czasu</h2>
+        <button class="btn btn-outline-secondary d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar">Menu</button>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Lista wpisów</h5>
+          <p class="text-muted small">Ostatnie wpisy czasu. W kolejnych etapach podłączymy dane z bazy.</p>
+          <div class="table-responsive mt-3">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Zadanie</th>
+                  <th>Czas</th>
+                  <th>Projekt</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2025-11-03</td>
+                  <td>Analiza wymagań</td>
+                  <td>90 min</td>
+                  <td>Projekt A</td>
+                  <td><a href="#" class="btn btn-sm btn-outline-primary">Edytuj</a></td>
+                </tr>
+                <tr>
+                  <td>2025-11-02</td>
+                  <td>Spotkanie</td>
+                  <td>60 min</td>
+                  <td>Projekt B</td>
+                  <td><a href="#" class="btn btn-sm btn-outline-primary">Edytuj</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </main>
+{% endblock %}

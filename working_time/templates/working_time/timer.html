@@ -1,0 +1,41 @@
+{% extends "working_time/dashboard.html" %}
+
+    {% block dashboard%}
+    <main class="col-12 col-md-9 col-lg-10 px-4">
+      <div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2 class="h4">Stoper</h2>
+        <button class="btn btn-outline-secondary d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar">Menu</button>
+      </div>
+        <div class="col-12">
+          <div class="card mb-3">
+            <div class="card-body">
+              <h5 class="card-title">Szybkie akcje</h5>
+              <p class="small text-muted">Rozpocznij/Stopuj timer lub dodaj ręcznie wpisy.</p>
+
+              <div class="d-grid gap-3">
+                <div>
+                  <button id="timer-start" class="btn btn-primary btn-lg w-100">Start</button>
+                </div>
+
+                <div>
+                  <button id="timer-stop" class="btn btn-danger btn-lg w-100">Stop</button>
+                </div>
+
+                <div>
+                  <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-2">
+                      <input name="note" class="form-control form-control-lg" placeholder="Dodaj notatkę...">
+                    </div>
+                    <button class="btn btn-outline-secondary btn-lg w-100" type="submit">Dodaj</button>
+                  </form>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    {% endblock %}

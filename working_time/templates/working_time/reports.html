@@ -1,0 +1,63 @@
+{% extends "working_time/dashboard.html" %}
+
+    {% block dashboard%}
+    <main class="col-12 col-md-9 col-lg-10 px-4">
+      <div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2 class="h4">Raporty</h2>
+        <button class="btn btn-outline-secondary d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar">Menu</button>
+      </div>
+
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title">Generuj raport</h5>
+          <form class="row g-3">
+            <div class="col-md-4">
+              <label class="form-label">Zakres dat</label>
+              <input type="date" class="form-control">
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Do</label>
+              <input type="date" class="form-control">
+            </div>
+            <div class="col-md-4 align-self-end">
+              <button class="btn btn-primary">Generuj</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Ostatnie raporty</h5>
+          <p class="text-muted small">Wygenerowane raporty będą wyświetlane tutaj. W przyszłości dodamy eksport do CSV/PDF.</p>
+          <div class="table-responsive mt-3">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Data generowania</th>
+                  <th>Zakres</th>
+                  <th>Typ</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2025-11-03</td>
+                  <td>2025-11-01 — 2025-11-03</td>
+                  <td>Dzienny</td>
+                  <td><a class="btn btn-sm btn-outline-primary" href="#">Pobierz</a></td>
+                </tr>
+                <tr>
+                  <td>2025-10-31</td>
+                  <td>2025-10-01 — 2025-10-31</td>
+                  <td>Miesięczny</td>
+                  <td><a class="btn btn-sm btn-outline-primary" href="#">Pobierz</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    {% endblock %}

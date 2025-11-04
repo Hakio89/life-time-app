@@ -1,0 +1,128 @@
+{% extends "main.html" %}
+{% block content %}
+<div class="container-fluid mt-4">
+	<div class="row">
+		<!-- Sidebar -->
+		<nav id="sidebar" class="col-12 col-md-3 col-lg-2 bg-light sidebar py-4">
+			<div class="px-3">
+				<h5 class="fw-bold">Panel</h5>
+				<ul class="nav flex-column mt-3">
+					<li class="nav-item mb-1">
+						<a class="nav-link active rounded" aria-current="page" href="{% url 'dashboard_view' %}">
+							<i class="bi bi-speedometer2 me-2"></i>Dashboard
+						</a>
+					</li>
+					<li class="nav-item mb-1">
+						<a class="nav-link rounded" href="{% url 'time_entry_view' %}"> <i class="bi bi-clock-history me-2"></i>Wpisy czasu</a>
+					</li>
+                    <li class="nav-item mb-1">
+						<a class="nav-link rounded" href="{% url 'add_time_entry_view' %}"> <i class="bi bi-plus-circle me-2"></i>Dodaj wpis</a>
+					</li>
+					<li class="nav-item mb-1">
+						<a class="nav-link rounded" href="{% url 'reports_view' %}"> <i class="bi bi-file-earmark-text me-2"></i>Raporty</a>
+					</li>
+					<li class="nav-item mb-1">
+						<a class="nav-link rounded" href="{% url 'projects_view' %}"> <i class="bi bi-building-add me-2"></i>Firmy</a>
+					</li>
+                    <li class="nav-item mb-1">
+						<a class="nav-link rounded" href="{% url 'timer_view' %}"> <i class="bi bi-stopwatch me-2"></i>Stoper</a>
+					</li>
+					<li class="nav-item mt-3">
+						<a class="nav-link text-muted small" href="#">Ustawienia</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+        {% block dashboard%}
+		<!-- Main content -->
+		<main class="col-12 col-md-9 col-lg-10 px-4">
+			<div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
+				<h2 class="h4">Dashboard</h2>
+				<!-- Sidebar toggle for small screens -->
+				<button class="btn btn-outline-secondary d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-expanded="false" aria-controls="sidebar">
+					Menu
+				</button>
+			</div>
+
+			<!-- Summary cards -->
+			<div class="row g-3 mb-4">
+				<div class="col-sm-6 col-md-4">
+					<div class="card shadow-sm">
+						<div class="card-body">
+							<h6 class="card-subtitle mb-2 text-muted">Dzisiaj</h6>
+							<h3 class="card-title">3h 42m</h3>
+							<p class="small text-muted mb-0">Zarejestrowany czas w ciągu dnia</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-md-4">
+					<div class="card shadow-sm">
+						<div class="card-body">
+							<h6 class="card-subtitle mb-2 text-muted">Tydzień</h6>
+							<h3 class="card-title">21h 15m</h3>
+							<p class="small text-muted mb-0">Łączny czas w tym tygodniu</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-12 col-md-4">
+					<div class="card shadow-sm">
+						<div class="card-body">
+							<h6 class="card-subtitle mb-2 text-muted">Aktywne zadania</h6>
+							<h3 class="card-title">2</h3>
+							<p class="small text-muted mb-0">Zadania w toku</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Recent entries / content area -->
+			<div class="row">
+				<div class="col-12">
+					<div class="card mb-4">
+						<div class="card-body">
+							<h5 class="card-title">Ostatnie wpisy czasu</h5>
+							<p class="text-muted small">Tutaj pojawią się niedawne rekordy zliczania czasu. Funkcja zostanie podłączona do bazy danych w kolejnych etapach rozwoju.</p>
+
+							<div class="table-responsive mt-3">
+								<table class="table table-hover">
+									<thead>
+										<tr>
+											<th>Data</th>
+											<th>Zadanie</th>
+											<th>Czas</th>
+											<th>Projekt</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>2025-11-03</td>
+											<td>Przygotowanie dokumentacji</td>
+											<td>1h 20m</td>
+											<td>Projekt A</td>
+										</tr>
+										<tr>
+											<td>2025-11-02</td>
+											<td>Spotkanie z klientem</td>
+											<td>2h 00m</td>
+											<td>Projekt B</td>
+										</tr>
+										<tr>
+											<td>2025-11-01</td>
+											<td>Implementacja widoku</td>
+											<td>4h 30m</td>
+											<td>Projekt A</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<a href="#" class="btn btn-primary">Zobacz więcej</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+        {% endblock %}
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "working_time/dashboard.html" %}
+
+    {% block dashboard%}
+    <!-- Main content -->
+    <main class="col-12 col-md-9 col-lg-10 px-4">
+      <div class="d-flex justify-content-between align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h2 class="h4">Projekty</h2>
+        <button class="btn btn-outline-secondary d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar" aria-expanded="false" aria-controls="sidebar">
+          Menu
+        </button>
+      </div>
+
+      <!-- Projects summary -->
+      <div class="row g-3 mb-4">
+        <div class="col-sm-6 col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">Wszystkie projekty</h6>
+              <h3 class="card-title">5</h3>
+              <p class="small text-muted mb-0">Łączna liczba projektów</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">Aktywne</h6>
+              <h3 class="card-title">3</h3>
+              <p class="small text-muted mb-0">Projekty z aktywnymi zadaniami</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h6 class="card-subtitle mb-2 text-muted">Zarchiwizowane</h6>
+              <h3 class="card-title">2</h3>
+              <p class="small text-muted mb-0">Projekty zamknięte</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects list -->
+      <div class="row">
+        <div class="col-12">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Lista projektów</h5>
+              <p class="text-muted small">Zarządzaj projektami: przeglądaj, edytuj lub dodawaj nowe. Integracja z modelem danych pojawi się w następnych etapach.</p>
+
+              <div class="table-responsive mt-3">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>Nazwa</th>
+                      <th>Właściciel</th>
+                      <th>Zadania</th>
+                      <th>Status</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Projekt A</td>
+                      <td>Jan Kowalski</td>
+                      <td>12</td>
+                      <td><span class="badge bg-success">Aktywny</span></td>
+                      <td><a href="#" class="btn btn-sm btn-outline-primary">Otwórz</a></td>
+                    </tr>
+                    <tr>
+                      <td>Projekt B</td>
+                      <td>Anna Nowak</td>
+                      <td>5</td>
+                      <td><span class="badge bg-success">Aktywny</span></td>
+                      <td><a href="#" class="btn btn-sm btn-outline-primary">Otwórz</a></td>
+                    </tr>
+                    <tr>
+                      <td>Projekt C</td>
+                      <td>Piotr Zieliński</td>
+                      <td>0</td>
+                      <td><span class="badge bg-secondary">Zarchiwizowany</span></td>
+                      <td><a href="#" class="btn btn-sm btn-outline-secondary">Podgląd</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <a href="#" class="btn btn-primary">Dodaj projekt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    {% endblock %}
